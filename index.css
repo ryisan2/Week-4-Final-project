@@ -1,0 +1,268 @@
+body {
+    background-color: white;
+}
+
+.dark-theme{
+    background-color: black;
+    color: white;
+}
+
+h2{
+    font-size: 64px;
+    color: purple;
+    margin-left: 20px;
+}
+
+.fa-magnifying-glass {
+    font-size: 24px;
+    color: purple;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.click__me {
+    font-size: 24px;
+    color: purple;
+    margin-left: 20px;
+}
+
+.power__button  {
+    height: 50px;
+    width: 100%;
+    max-width: 50px;
+    cursor: pointer;
+    transition: transform 0.1s ease; /* Added for button animation */
+}
+.power__button:active {
+    transform: scale(0.9); /* Added for button animation */
+}
+
+
+.row {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  border: 2px solid green;
+  border-radius: 20px;
+  margin-bottom: 200px;
+  background-image: url(assets/movie\ banner.png);
+  background-repeat: nrepeat;
+  height: 200px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.search__div   {
+    margin-top: 100px; 
+    padding-right: 30px;
+    flex: 1;
+    position: relative;
+}
+
+.search__box {
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 24px;
+}
+
+.list__container {
+  border: 2px solid red;
+  border-radius: 20px;
+  margin-right: 30px;
+  width: 100%;
+  max-width: 300px;
+  background-color: rgb(114, 76, 143);
+
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 10px;
+}
+
+li {
+  margin-right: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black; /* Changed from white to black for visibility */
+    transform: scaleX(0);
+    transform-origin: left; /* Changed from right to left */
+    transition: transform 0.5s ease;
+}
+
+li a:hover {
+  width: 100%;
+  /* text-decoration: underline; */
+  color: black;
+
+}
+
+li a:hover::after {
+    transform: scaleX(1); /* This will scale the line to full width */
+  }
+
+/* @keyframes slider {
+
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50%);
+    }
+ 100% {
+        transform: translateX(0);
+    }
+} */
+
+/* ___________________________________________CARD________________________________________ */
+
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    /* border: 2px solid blue; */
+}
+.card {
+
+    border: 2px solid red;
+    border-radius: 20px;
+    display: flex;
+flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    animation: slideBorder 3s linear infinite; 
+    height: 400px;
+    }
+
+ .card:hover {
+    border: 2px solid red;
+    border-radius: 20px;
+    margin 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    animation: slideBorder 3s linear infinite; 
+    height: 700px;
+ }
+
+
+.words {
+    font-size: 16px;
+    text-align: center;
+    color: white;
+
+}
+
+.book__img {
+    width: 100%;
+    height: 400px;
+    border-radius:20px;
+    border: 1px solid black;
+    animation: slideBorder 3s linear infinite; 
+
+}
+
+
+.card__content {
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card__title {
+    font-size: 24px;
+    color: purple;
+}
+
+.price {
+    font-size: 20px;
+    color: rgb(52, 129, 173);
+    display: flex;
+    justify-content: center;
+}
+
+.card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.card:hover .card__info {
+    visibility: visible;
+    animation: slideBorder 3s linear infinite; 
+}
+
+.buy__button {
+
+    background-color: rgb(205, 69, 146);
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100px; /* Adjusted width */
+    font-size: 20px;
+    align-self: center; /* Added for centering */
+    transition: transform 0.1s ease; /* Added for button animation */
+}
+
+.buy__button:active {
+    transform: scale(0.9); /* Added for button animation */
+}
+
+.buy__button:hover {    
+
+    animation: slideBorder 3s linear infinite; 
+
+
+}
+
+    @keyframes slideBorder {
+        0% {
+          border-color: rgb(255, 0, 0);
+        }
+        25% {
+          border-color: rgb(0, 255, 0);
+        }
+        50% {
+          border-color: rgb(0, 0, 255);
+        }
+        75% {
+          border-color: rgb(255, 255, 0);
+        }
+        100% {
+          border-color: rgb(255, 0, 0);
+        }
+      }
