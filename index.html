@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-  <script defer src="index.js"></script>
   <link rel="stylesheet" href="index.css" />
+  <!-- Uncommented fontawesome script for icons -->
   <script src="https://kit.fontawesome.com/03953ef183.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav>
-    <section id="navigation">
+  <nav  >
+    <section id="navigation" onmousemove="movebg(event)">
       <div class="row">
         <div class="title">
           <h2>Waifu Movies</h2>
         </div>
-        <div class="list__container">
+        <div class="list__container" >
           <ul class="nav__list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Movies</a></li>
+            <li><a href="movies.html">Home</a></li>
+            <li><a href="index.html">Movies</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
@@ -29,42 +29,65 @@
       </div>
     </section>
   </nav>
-
-  <div class="search__movie"></div>
-  <div class="search__div">
-    <div class="search__container">
-      <div class="search__box--container">
-        <input type="text" class="search__box" placeholder="Search " onchange="onSearchChange(event)">
-        <i class="fa-solid fa-magnifying-glass click" onclick="toggleContrast()"></i>
+  <section >
+    <div class="search__movie"></div>
+    <div class="search__div">
+      <div class="search__container">
+        <div class="search__box--container">
+          <input
+            type="text"
+            class="search__box"
+            placeholder="Search"
+            onchange="onSearchChange(event)" />
+          <i
+            class="fa-solid fa-magnifying-glass click"
+            onclick="toggleContrast()"></i>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Modal Section -->
-  <section>
+  <section >
     <div class="modal">
       <div class="modal__half modal__half-left modal__about"></div>
       <div class="modal__half modal__half-right modal__contact modal__movie">
         <div class="btn__div">
-          <button id="contact_submit" class="contact__btn click" type="submit">
+          <button
+            id="contact_submit"
+            class="contact__btn click"
+            type="submit">
             Purchase Tickets!
           </button>
         </div>
         <div class="modal__overlay modal__overlay-loading">
           <i class="fas fa-spinner"></i>
         </div>
-        <div class="modal__overlay modal__overlay-success">
-          Thanks for the message! Looking forward to speaking to you very soon! <br><br>&#128515;
-        </div>
-        <div><i class="fas fa-times modal__exit click" onclick="toggleModal()"></i></div>
       </div>
     </div>
+ 
+        
+
   </section>
 
-  <section>
+  <section >
     <div class="movie__row">
-      <div class="movie__wrapper" onclick="toggleModal()"></div>
+      <div class="movie__wrapper"></div>
     </div>
   </section>
-</body>
+  <script src="index.js"></script>
+  
+  <div class="shape" onmousemove="movebg(event)">
+      <img src="./assets/robot.svg" class="shape--0" />
+        <img src="./assets/thor.svg" class="shape--1" />
+        <img src="./assets/decepticon.svg" class="shape--2" />
+        <img src="./assets/autobots.svg" class="shape--3" />
+        <img src="./assets/film.svg" class="shape--4" />
+        <img src="./assets/justice league.svg" class="shape--5" />
+        <img src="./assets/superman.svg" class="shape--6" />
+        <img src="./assets/faces.svg" class="shape--7" />
+        <img src="./assets/flash.svg" class="shape--8" />
+    </body>
+
+  </div>
 </html>
