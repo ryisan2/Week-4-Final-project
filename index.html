@@ -1,57 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <script src="https://kit.fontawesome.com/2d1751ace6.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-  </head>
-
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <script defer src="index.js"></script>
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://kit.fontawesome.com/03953ef183.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav>
     <section id="navigation">
       <div class="row">
         <div class="title">
-          <h2>The WAIFU API</h2>
+          <h2>Waifu Movies</h2>
         </div>
-        <div class="search__div">
-            <input type="text" placeholder="Search.." class="search__box"> <i class="fas fa-magnifying-glass click"></i>
-        </div>
-        <figure  onclick="toggleContrast()"><img src="./assets/power-on.png" alt="" class="power__button "></figure>
         <div class="list__container">
-          <nav>
-            <ul class="nav__list">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Movies</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
+          <ul class="nav__list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
+        <figure onclick="toggleContrast()">
+          <img src="./assets/power-on.png" alt="" class="power__button" />
+        </figure>
       </div>
     </section>
+  </nav>
 
-    <section class="cards">
-      <div class="card">
-          <img src="./assets/anime.jpeg" alt="" class="book__img" />
-        <div class="card__content">
-          <div class="card__info">
-            <h2 class="card__title">Anime Books</h2>
-            <h2 class="price">$10 <small>99</small></h2>
-            <button class="buy__button">
-              <a href="#" class="button link">Buy now</a>
-            </button>
-            <p class="words">This anime book is one of the best hentai
-                books you can find on the internet. It has
-                a lot of interesting stories and characters
-                that you will love. It is a must-have for
-                every anime lover.</p>
-          </div>
-        </div>
+  <div class="search__movie"></div>
+  <div class="search__div">
+    <div class="search__container">
+      <div class="search__box--container">
+        <input type="text" class="search__box" placeholder="Search " onchange="onSearchChange(event)">
+        <i class="fa-solid fa-magnifying-glass click" onclick="toggleContrast()"></i>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <script src="./index.js"></script>
-    <script src="./movies.js"></script>
-  </body>
+  <!-- Modal Section -->
+  <section>
+    <div class="modal">
+      <div class="modal__half modal__half-left modal__about"></div>
+      <div class="modal__half modal__half-right modal__contact modal__movie">
+        <div class="btn__div">
+          <button id="contact_submit" class="contact__btn click" type="submit">
+            Purchase Tickets!
+          </button>
+        </div>
+        <div class="modal__overlay modal__overlay-loading">
+          <i class="fas fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay-success">
+          Thanks for the message! Looking forward to speaking to you very soon! <br><br>&#128515;
+        </div>
+        <div><i class="fas fa-times modal__exit click" onclick="toggleModal()"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="movie__row">
+      <div class="movie__wrapper" onclick="toggleModal()"></div>
+    </div>
+  </section>
+</body>
 </html>

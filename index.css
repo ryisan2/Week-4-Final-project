@@ -13,18 +13,41 @@ h2{
     margin-left: 20px;
 }
 
+.search__box--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+}
+
+.search__box {
+   
+    width: 100%;
+    height: 50px;
+    max-width: 200px;
+    border-radius: 20px;
+    font-size: 24px;
+position: absolute;
+}
+
 .fa-magnifying-glass {
     font-size: 24px;
     color: purple;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
+    top: 2px;
+    left: 80px;
+   position: relative  ;
 }
 
 .click__me {
     font-size: 24px;
     color: purple;
     margin-left: 20px;
+}
+
+.navigation {
+    margin-bottom: 200px;
 }
 
 .power__button  {
@@ -54,22 +77,17 @@ h2{
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  animation: slideBorder 3s linear infinite; 
+
 }
 
 .search__div   {
     margin-top: 100px; 
     padding-right: 30px;
     flex: 1;
-    position: relative;
 }
 
-.search__box {
-    width: 100%;
-    height: 50px;
-    border-radius: 20px;
-    padding-left: 20px;
-    font-size: 24px;
-}
+
 
 .list__container {
   border: 2px solid red;
@@ -140,129 +158,375 @@ li a:hover::after {
 
 /* ___________________________________________CARD________________________________________ */
 
-
-.cards {
+.movie__wrapper{
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    /* border: 2px solid blue; */
+    align-items: center;
+    margin-top: 100px;
 }
-.card {
 
-    border: 2px solid red;
-    border-radius: 20px;
+.movie__img {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    max-width: 200px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 1px solid;
+    transition: 800ms ease;
+    
+}
+
+.movie__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    animation: slideBorder 3s linear infinite; 
+    
+}
+
+.movie__img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    animation: slideBorder 3s linear infinite; 
+}
+
+.movie__info {
+    font-size: 12px;
+    display: none;
+    text-align: center;
+    }
+
+.more-info {
     display: flex;
 flex-direction: column;
     width: 100%;
-    max-width: 300px;
-    animation: slideBorder 3s linear infinite; 
-    height: 400px;
-    }
-
- .card:hover {
-    border: 2px solid red;
-    border-radius: 20px;
-    margin 0 auto;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 300px;
-    animation: slideBorder 3s linear infinite; 
-    height: 700px;
- }
-
-
-.words {
-    font-size: 16px;
-    text-align: center;
-    color: white;
-
-}
-
-.book__img {
-    width: 100%;
-    height: 400px;
-    border-radius:20px;
-    border: 1px solid black;
-    animation: slideBorder 3s linear infinite; 
-
-}
-
-
-.card__content {
-    display: flex;   
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.card__title {
-    font-size: 24px;
+    max-width: 70px;
+    font-size: 12px;
     color: purple;
+    margin-top: 10px;
+ 
 }
 
-.price {
-    font-size: 20px;
-    color: rgb(52, 129, 173);
+.movie__img:hover + .movie__info {
     display: flex;
-    justify-content: center;
+flex-grow: 1;
 }
 
-.card__info {
+}
+
+@keyframes slideBorder {
+    0% {
+      border-color: rgb(255, 0, 0);
+    }
+    25% {
+      border-color: rgb(0, 255, 0);
+    }
+    50% {
+      border-color: rgb(0, 0, 255);
+    }
+    75% {
+      border-color: rgb(255, 255, 0);
+    }
+    100% {
+      border-color: rgb(255, 0, 0);
+    }
+  }
+
+
+/* ___________________________________________MODAL________________________________________ */
+
+.modal__open nav,
+.modal__open .scroll,
+.modal__open .header,
+.modal__open .introbox {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms ease;
+}
+
+
+.modal {
+    position: absolute;
+    /*because we dont want this to mess with any other element on the webpage so we use absolute */
+    top: 30%;
+    left: 5%;
+    translate: (-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    height: 700px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    visibility: hidden;
+    z-index: -1;
+    transition: visibility 1s, z-index 1s box-shadow 1s ease;
+  }
+  
+  .modal__open {
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    visibility: visible;
+  }
+  
+  .modal__open .modal {
+    visibility: visible;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    z-index: 1;
+  }
+  
+  .modal__open .modal__about {
+    transform: translateX(0%);
+  }
+  .modal__open .modal__contact {
+    transform: translateX(-0);
+  }
+  
+  .modal__half {
+    width: 50%;
+    display: flex;
+    /* align-content: flex-start;
+    text-align: flex-start; */
+    position: relative;
+    transition: all 300ms ease;
+  }
+  
+  .modal__sub {
+    font-size: 20px;
+  }
+  
+  .modal__half-right {
     display: flex;
     flex-direction: column;
+    background-color: black;
+    color: white;
+    padding-top: 50px;
+  }
+  
+  .modal__contact {
+    transform: translateX(110%);
+  }
+  
+  .modal__about {
+    background-color: rgb(246, 245, 245);
+    overflow: hidden;
+    transform: translateX(-110%);
+    padding: 15px;
+  }
+  
+  .modal__top {
+    margin-top: 100px;
+  }
+  
+  .modal__img {
+    border: red 2px dotted;
+    text-decoration: none;
+    height: 70px;
+    width: 100%;
+    max-width: 80px;
+  }
+  
+  .modal__list {
+    border: 1px dotted green;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .modal__overlay {
+    background-color: black;
+    position: absolute;
+    font-size: 60px;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+  }
+  .modal__overlay-loading {
+    background-color: black;
+    display: none;
+    font-size: 80px;
+    padding-top: 150px;
+  }
+  
+  .modal__overlay-success {
+    background-color: #f06049;
+    color: white;
+    text-align: center;
+    display: none;
+  }
+  
+  .fa-spinner {
+    animation: spinner 750ms infinite linear;
+  }
+  
+  .modal__overlay-visible {
+    display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
-}
-
-.card:hover .card__info {
-    visibility: visible;
-    animation: slideBorder 3s linear infinite; 
-}
-
-.buy__button {
-
-    background-color: rgb(205, 69, 146);
+    z-index: 1;
+  }
+  
+  @keyframes spinner {
+    /* Animation for the spinning wheel for loading */
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .modal__exit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
     color: white;
-    border: 1px solid white;
-    border-radius: 20px;
-    padding: 10px;
-    margin-top: 20px;
     cursor: pointer;
-    width: 100px; /* Adjusted width */
-    font-size: 20px;
-    align-self: center; /* Added for centering */
-    transition: transform 0.1s ease; /* Added for button animation */
-}
-
-.buy__button:active {
-    transform: scale(0.9); /* Added for button animation */
-}
-
-.buy__button:hover {    
-
-    animation: slideBorder 3s linear infinite; 
-
-
-}
-
-    @keyframes slideBorder {
-        0% {
-          border-color: rgb(255, 0, 0);
-        }
-        25% {
-          border-color: rgb(0, 255, 0);
-        }
-        50% {
-          border-color: rgb(0, 0, 255);
-        }
-        75% {
-          border-color: rgb(255, 255, 0);
-        }
-        100% {
-          border-color: rgb(255, 0, 0);
-        }
-      }
+    z-index: 100; /*We want to make sure this always shows up */
+  }
+  
+  .information {
+    /* margin-top: 100px; */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    /* border: 2px dotted orangered; */
+  }
+  
+  .lang__pic {
+    height: 60px;
+    width: auto;
+    max-width: 60px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .lang__pic:hover {
+    transform: scale(1.1);
+    filter: brightness(70%);
+    transform: scale(0.9);
+  }
+  
+  .lang__name {
+    font-weight: 500;
+    font-size: 15px;
+    display: none;
+    transition: all ease 500ms;
+  }
+  
+  .langs {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-content: center;
+    align-items: center;
+    padding-left: 40px;
+    /* border: 3px dotted purple; */
+  }
+  
+  .modal__langs {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* border: 3px dotted purple; */
+  }
+  
+  .modal__langs:hover .lang__name {
+    display: inline-block;
+    opacity: 1;
+  }
+  
+  .modal__contact {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    /* border: 3px dotted purple; */
+  }
+  
+  #contact__form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    /* border: 3px dotted purple; */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* border-color: #f06049;
+    color: #f06049;
+  } */
+  
+  .contact__input-name {
+    height: 100px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-bottom: solid 1px white;
+  }
+  
+  .contact__input--message {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    height: 150px;
+    background-color: black;
+    color: white;
+    border-bottom: solid 1px white;
+  }
+  
+  .contact__btn {
+    background-color: white;
+    color: black;
+    width: 100%;
+    padding: 12px 24px;
+    max-width: 150px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-content: start;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    /* Adding transition for smooth effect */
+  }
+  
+  .contact__btn:hover {
+    background-color: rgb(239, 96, 74);
+    /* Adjust the RGB values to create a brighter version */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Adding subtle bright glow */
+    color: white;
+  }
+  
+  .btn__div {
+    display: flex;
+    position: left;
+    margin-top: 20px;
+    /* border: 2px solid green; */
+    width: 100%;
+    max-width: 500px;
+  }
