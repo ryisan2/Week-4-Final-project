@@ -49,51 +49,51 @@ function movieHTML(movie) {
 
 let isModalOpen = false;
 
-function toggleModal(movie = null) {
-  isModalOpen = !isModalOpen;
+// function toggleModal(movie = null) {
+//   isModalOpen = !isModalOpen;
 
-  if (isModalOpen && movie) {
-    modalInfo(movie);
-  } else {
-    document.body.classList.remove("modal__open");
-  }
-}
+//   if (isModalOpen && movie) {
+//     modalInfo(movie);
+//   } else {
+//     document.body.classList.remove("modal__open");
+//   }
+// }
 
-function modalInfo(movie) {
-    document.body.classList.add("modal__open"); 
-  // Update the left side of the modal with the movie name and poster
-  const modalLeft = document.querySelector('.modal__half-left');
-  modalLeft.innerHTML = `
-    <div class="information intro__txt2">
-      <h3><span class="modal__title modal__title--about">${movie.Title}</span></h3>
-      <img src="${movie.Poster}" alt="${movie.Title}" class="movie__img">
-    </div>
-  `;
+// function modalInfo(movie) {
+//     document.body.classList.add("modal__open"); 
+//   // Update the left side of the modal with the movie name and poster
+//   const modalLeft = document.querySelector('.modal__half-left');
+//   modalLeft.innerHTML = `
+//     <div class="information intro__txt2">
+//       <h3><span class="modal__title modal__title--about">${movie.Title}</span></h3>
+//       <img src="${movie.Poster}" alt="${movie.Title}" class="movie__img">
+//     </div>
+//   `;
 
-  // Update the right side of the modal with the movie information
-  const modalRight = document.querySelector('.modal__half-right');
-  modalRight.innerHTML = `
-    <h3 class="contact__header"><span>${movie.Title}</span></h3>
-    <br>
-    <h4 class="contact__sub">${movie.Rated}</h4>
-    <h4 class="contact__sub">${movie.Rated}</h4>
-    <p>${movie.Plot}</p>
-    <div class="btn__div">
-      <button id="contact_submit" class="contact__btn click__me" type="submit">
-        Purchase Tickets!
-        </div>
-        <div> <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i> </div>
-    </div>
-      </button>
-    </div>
-  `;
+//   // Update the right side of the modal with the movie information
+//   const modalRight = document.querySelector('.modal__half-right');
+//   modalRight.innerHTML = `
+//     <h3 class="contact__header"><span>${movie.Title}</span></h3>
+//     <br>
+//     <h4 class="contact__sub">${movie.Rated}</h4>
+//     <h4 class="contact__sub">${movie.Rated}</h4>
+//     <p>${movie.Plot}</p>
+//     <div class="btn__div">
+//       <button id="contact_submit" class="contact__btn click__me" type="submit">
+//         Purchase Tickets!
+//         </div>
+//         <div> <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i> </div>
+//     </div>
+//       </button>
+//     </div>
+//   `;
 
-}
+// }
 
-function movieInfo(imdbID) {
-  localStorage.setItem("imdbID", imdbID);
-  window.location.href = "movie.html";
-}
+// function movieInfo(imdbID) {
+//   localStorage.setItem("imdbID", imdbID);
+//   window.location.href = "movie.html";
+// }
 
 function toggleContrast() {
   document.body.classList.toggle("dark-theme");
