@@ -1,93 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <link rel="stylesheet" href="index.css" />
-  <!-- Uncommented fontawesome script for icons -->
-  <script src="https://kit.fontawesome.com/03953ef183.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <nav  >
-    <section id="navigation">
-      <div class="row">
-        <div class="title">
-          <h2>Waifu Movies</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css" />
+    <!-- Uncommented fontawesome script for icons -->
+    <script
+      src="https://kit.fontawesome.com/03953ef183.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="index.js"></script>
+  </head>
+  <body class="dat__body">
+    <div class="website__Wrapper" onmousemove="moveBg(event)">
+      <nav>
+        <section id="navigation">
+          <div class="row">
+            <div class="title">
+              <h2>Waifu Movies</h2>
+            </div>
+            <div class="list__container">
+              <ul class="nav__list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Movies</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <figure onclick="toggleContrast()">
+              <img src="./assets/power-on.png" alt="" class="power__button" />
+            </figure>
+          </div>
+        </section>
+      </nav>
+      <section>
+        <div class="search__movie"></div>
+        <div class="search__div">
+          <div class="search__container">
+            <div class="search__box--container">
+              <input
+                type="text"
+                class="search__box"
+                placeholder="Search"
+                onchange="onSearchChange(event)"
+              />
+              <i
+                class="fa-solid fa-magnifying-glass click"
+                onclick="toggleContrast()"
+              ></i>
+            </div>
+          </div>
         </div>
-        <div class="list__container" >
-          <ul class="nav__list">
-            <li><a href="movies.html">Home</a></li>
-            <li><a href="index.html">Movies</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <figure onclick="toggleContrast()">
-          <img src="./assets/power-on.png" alt="" class="power__button" />
-        </figure>
-      </div>
-    </section>
-  </nav>
-  <section >
-    <div class="search__movie"></div>
-    <div class="search__div">
-      <div class="search__container">
-        <div class="search__box--container">
-          <input
-            type="text"
-            class="search__box"
-            placeholder="Search"
-            onchange="onSearchChange(event)" />
-          <i
-            class="fa-solid fa-magnifying-glass click"
-            onclick="toggleContrast()"></i>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Modal Section -->
-  <!-- <section >
-    <div class="modal">
-      <div class="modal__half modal__half-left modal__about"></div>
-      <div class="modal__half modal__half-right modal__contact modal__movie">
-        <div class="btn__div">
-          <button
-            id="contact_submit"
-            class="contact__btn click"
-            type="submit">
-            Purchase Tickets!
-          </button>
-        </div>
-        <div class="modal__overlay modal__overlay-loading">
-          <i class="fas fa-spinner"></i>
-        </div>
-      </div>
-    </div> -->
- 
+      <!-- Modal Section -->
+
+      <section>
+        <div class="modal">
+          <div class="modal__half modal__half-left modal__about"></div>
+          <div
+            class="modal__half modal__half-right modal__contact modal__movie"
+          >
+            <div class="btn__div">
+              <button id="contact_submit" class="contact__btn click" type="submit">
+                Purchase Tickets!
+              </button>
         
+            </div>
+            <div class="modal__overlay modal__overlay-loading">
+              <i class="fas fa-spinner"></i>
+            </div>
+          </div>
+        </div>
 
-  </section>
+        <section>
+          <div class="movie__row" >
+            <div class="movie__wrapper" onclick="toggleModal(this)"></div>
+          </div>
+        </section>
+        <section>
+          <img src="./assets/robot.svg" class="shape shape--0" />
+          <img src="./assets/thor.svg" class="shape shape--1" />
+          <img src="./assets/decepticon.svg" class="shape shape--2" />
+          <img src="./assets/autobots.svg" class="shape shape--3" />
+          <img src="./assets/film.svg" class="shape shape--4" />
+          <img src="./assets/justice league.svg" class="shape shape--5" />
+          <img src="./assets/superman.svg" class="shape shape--6" />
+          <img src="./assets/faces.svg" class="shape shape--7" />
+          <img src="./assets/flash.svg" class="shape shape--8" />
+        </section>
 
-  <section >
-    <div class="movie__row">
-      <div class="movie__wrapper"></div>
+        <section class="movie__buff">
+          <figure class="glasses">
+            <img src="./assets/popcorn.png" alt="" />
+          </figure>
+        </section>
+      </section>
     </div>
-  </section>
-  
-  <div class="shape" onmousemove="moveShapes(event)">
-    <img src="./assets/robot.svg" class="shape shape--0" />
-    <img src="./assets/thor.svg" class="shape shape--1" />
-    <img src="./assets/decepticon.svg" class="shape shape--2" />
-    <img src="./assets/autobots.svg" class="shape shape--3" />
-    <img src="./assets/film.svg" class="shape shape--4" />
-    <img src="./assets/justice league.svg" class="shape shape--5" />
-    <img src="./assets/superman.svg" class="shape shape--6" />
-    <img src="./assets/faces.svg" class="shape shape--7" />
-    <img src="./assets/flash.svg" class="shape shape--8" />
-</body>
-
-<script defer src="index.js"></script>
-  </div>
+  </body>
 </html>
