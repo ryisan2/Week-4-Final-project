@@ -1,10 +1,27 @@
 body {
     background-color: white;
+    background-image: url(assets/waifu.png);
+}
+
+body background-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: .5;
+
+}
+.dat__body {
+background-repeat: no-repeat;
 }
 
 .dark-theme{
     background-color: black;
     color: white;
+}
+
+.website__Wrapper {
+    height:90vh;
 }
 
 h2{
@@ -239,7 +256,7 @@ flex-direction: column;
 flex-grow: 1;
 }
 
-}
+
 
 @keyframes slideBorder {
     0% {
@@ -281,52 +298,78 @@ width = 80vw */
 
 .shape {
     position: fixed;
-    width:20px
+    width:30px
+ 
   }
   
   .shape--0 {
     top: 15vh;
     left: 5vw;
+    background-color: rgb(124, 156, 232);
+    border-radius: 50px;
  }
 
  
+
+ .glasses {
+   top: 50px;
+margin-left: 2000px; }
+ 
   .shape--1 {
-    top: 15vh;
+    top: 25vh;
     left: 45vw;
+    background-color: rgb(232, 230, 124);
+    border-radius: 50px;
   }
+
   .shape--2 {
     top: 15vh;
     left: 80vw;
+    background-color: rgb(131, 124, 232);
+    border-radius: 50px;
   }
+
   .shape--3 {
-    top: 50vh;
+    top: 65vh;
     left: 5vw;
+    background-color: rgb(232, 124, 124);
+    border-radius: 50px;
 
   }
+
   .shape--4 {
-    top: 50vh;
+    top: 60vh;
     left: 45vw;
-
+    background-color: rgb(124, 209, 232);
+    border-radius: 50px;
   }
+
   .shape--5 {
-    top: 50vh;
+    top: 60vh;
     left: 80vw;
-
+    background-color: rgb(124, 232, 131);
+    border-radius: 50px;
   }
+
   .shape--6 {
-    top: 80vh;
+    top: 85vh;
     left: 5vw;
-
+    background-color: rgb(232, 189, 124);
+    border-radius: 50px;
   }
+
   .shape--7 {
-    top: 80vh;
+    top: 90vh;
     left: 45vw;
-
+    background-color: rgb(200, 124, 232);
+    border-radius: 50px;
   }
-  .shape--8 {
-    top: 80vh;
-    left: 80vw;
 
+  .shape--8 {
+    top: 85vh;
+    left: 80vw;
+    background-color: rgb(124, 232, 209);
+    border-radius: 50px;
   }
   
   /* ------------------------------------------PROJECT CSS----------------------------------------------------- */
@@ -343,13 +386,11 @@ width = 80vw */
   transition: all 400ms ease;
 }
 
-
 .modal {
     position: absolute;
-    /*because we dont want this to mess with any other element on the webpage so we use absolute */
-    top: 30%;
-    left: 5%;
-    translate: (-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 90%;
     max-width: 1100px;
     height: 700px;
@@ -357,20 +398,19 @@ width = 80vw */
     overflow: hidden;
     display: flex;
     visibility: hidden;
-    z-index: -1;
-    transition: visibility 1s, z-index 1s box-shadow 1s ease;
+    z-index: 1;
+    transition: visibility 1s, z-index 1s, box-shadow 1s ease;
   }
   
   .modal__open {
-    z-index: 60;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
     visibility: visible;
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.55);
   }
   
   .modal__open .modal {
     visibility: visible;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
-    z-index: 1;
+    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.55);
   }
   
   .modal__open .modal__about {
@@ -467,7 +507,7 @@ width = 80vw */
   .modal__overlay-visible {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;å
     z-index: 1;
   }
   
