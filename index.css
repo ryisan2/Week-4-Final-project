@@ -1,3 +1,9 @@
+html body {
+    display: flex;
+    flex-direction: column;
+}
+
+
 body {
     background-color: white;
     background-image: url(assets/waifu.png);
@@ -21,7 +27,7 @@ background-repeat: no-repeat;
 }
 
 .website__Wrapper {
-    height:90vh;
+    height:120vh;
 }
 
 h2{
@@ -55,8 +61,7 @@ padding-left: 10px;
     position: relative;
     top: 2px;
     left: 80px;
-   position: relative  ;
-}
+    cursor: pointer;}
 
 .click__me {
     font-size: 24px;
@@ -828,6 +833,14 @@ margin-left: 2000px; }
 
     }
 
+.footer {
+\    width: 100%;
+    background: #3586ff;
+    min-height: 50px;
+    padding: 20px 50px;
+ 
+  }
+
     .list__container {
         max-width: 80%;
         padding: 0 50px;
@@ -870,6 +883,7 @@ margin-left: 2000px; }
 
     .movie__wrapper {
    flex-wrap: wrap;
+   height:45vh;
     }
 
     .iconic {
@@ -877,6 +891,12 @@ margin-left: 2000px; }
         justify-content: center;
         align-items: center;
         padding-right: 100px;
+    }
+    .movie__img {
+        height: 200px;
+        max-width: 200px;
+        overflow: hidden;
+        margin-top: 10px;
     }
 
     .copyright {
@@ -990,4 +1010,5 @@ margin-left: 2000px; }
     width: 100%;
 }
 
+/* ------------------------------------------PROJECT CSS----------------------------------------------------- */
 /* ------------------------------------------PROJECT CSS----------------------------------------------------- */
